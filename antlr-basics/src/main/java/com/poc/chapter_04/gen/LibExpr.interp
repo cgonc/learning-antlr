@@ -27,7 +27,7 @@ NEWLINE
 WS
 
 rule names:
-prog
+program
 statement
 expression
 

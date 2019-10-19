@@ -1,6 +1,7 @@
-grammar Expr;
+grammar LibExpr;
+import CommonLexerRules;
 
-prog : statement+;
+program : statement+;
 statement : expression NEWLINE
             | ID '=' expression NEWLINE
             | NEWLINE
@@ -10,11 +11,5 @@ expression : expression ('*'|'/') expression
             | INT
             | ID
             | '(' expression ')';
-
-ID : [a-zA-Z]+ ;
-INT : [0-9]+ ;
-NEWLINE : '\r'? '\n' ;
-WS : [ \t]+ -> skip ;
-
 
 
