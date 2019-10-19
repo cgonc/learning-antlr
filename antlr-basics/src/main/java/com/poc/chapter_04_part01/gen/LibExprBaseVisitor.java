@@ -1,5 +1,6 @@
 // Generated from D:/my_github/antlr-poc/antlr-basics/src/main/java/com/poc/chapter_04\LibExpr.g4 by ANTLR 4.7.2
-package com.poc.chapter_04.gen;
+package com.poc.chapter_04_part01.gen;
+
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -11,25 +12,37 @@ import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
  * operations with no return type.
  */
 public class LibExprBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements LibExprVisitor<T> {
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitProgram(LibExprParser.ProgramContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitProgram(LibExprParser.ProgramContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStatement(LibExprParser.StatementContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitStatement(LibExprParser.StatementContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpression(LibExprParser.ExpressionContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitExpression(LibExprParser.ExpressionContext ctx) {
+		return visitChildren(ctx);
+	}
 }

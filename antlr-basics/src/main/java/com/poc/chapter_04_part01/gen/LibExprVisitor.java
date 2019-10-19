@@ -1,5 +1,6 @@
 // Generated from D:/my_github/antlr-poc/antlr-basics/src/main/java/com/poc/chapter_04\LibExpr.g4 by ANTLR 4.7.2
-package com.poc.chapter_04.gen;
+package com.poc.chapter_04_part01.gen;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -10,20 +11,23 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  * operations with no return type.
  */
 public interface LibExprVisitor<T> extends ParseTreeVisitor<T> {
+
 	/**
 	 * Visit a parse tree produced by {@link LibExprParser#program}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitProgram(LibExprParser.ProgramContext ctx);
+
 	/**
 	 * Visit a parse tree produced by {@link LibExprParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitStatement(LibExprParser.StatementContext ctx);
+
 	/**
-	 * Visit a parse tree produced by {@link LibExprParser#expression}.
+	 * Visit a parse tree produced by {@link LibExprParser#expression()}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */

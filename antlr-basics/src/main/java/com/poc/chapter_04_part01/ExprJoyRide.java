@@ -1,4 +1,4 @@
-package com.poc.chapter_04;
+package com.poc.chapter_04_part01;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import com.poc.chapter_03_3_4.test.TranslateLanguageApplication;
-import com.poc.chapter_04.gen.LibExprLexer;
-import com.poc.chapter_04.gen.LibExprParser;
+import com.poc.chapter_04_part01.gen.LibExprLexer;
+import com.poc.chapter_04_part01.gen.LibExprParser;
 
 public class ExprJoyRide {
 
