@@ -1,0 +1,6 @@
+a = 50
+b = 20 *100
+c = a + b
+result = c * 1000
+result
+
