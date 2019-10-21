@@ -1,6 +1,8 @@
-a = 50
-b = 20 *100
+a = 5
+b = 2 * 10
 c = a + b
-result = c * 1000
-result
+result = c * 5 / 6
+clear
+z = 10
+k = z / 3
 

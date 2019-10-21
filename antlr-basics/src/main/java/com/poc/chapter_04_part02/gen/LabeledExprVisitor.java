@@ -1,6 +1,5 @@
 // Generated from D:/my_github/antlr-poc/antlr-basics/src/main/java/com/poc/chapter_04_part02\LabeledExpr.g4 by ANTLR 4.7.2
 package com.poc.chapter_04_part02.gen;
-
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -11,14 +10,12 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  * operations with no return type.
  */
 public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
-
 	/**
 	 * Visit a parse tree produced by {@link LabeledExprParser#prog}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitProg(LabeledExprParser.ProgContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code printExpr}
 	 * labeled alternative in {@link LabeledExprParser#stat}.
@@ -26,7 +23,6 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPrintExpr(LabeledExprParser.PrintExprContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code assign}
 	 * labeled alternative in {@link LabeledExprParser#stat}.
@@ -34,7 +30,6 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitAssign(LabeledExprParser.AssignContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code blank}
 	 * labeled alternative in {@link LabeledExprParser#stat}.
@@ -42,7 +37,13 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBlank(LabeledExprParser.BlankContext ctx);
-
+	/**
+	 * Visit a parse tree produced by the {@code clear}
+	 * labeled alternative in {@link LabeledExprParser#stat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitClear(LabeledExprParser.ClearContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code parens}
 	 * labeled alternative in {@link LabeledExprParser#expr}.
@@ -50,7 +51,6 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitParens(LabeledExprParser.ParensContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code MulDiv}
 	 * labeled alternative in {@link LabeledExprParser#expr}.
@@ -58,7 +58,6 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMulDiv(LabeledExprParser.MulDivContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code AddSub}
 	 * labeled alternative in {@link LabeledExprParser#expr}.
@@ -66,7 +65,6 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitAddSub(LabeledExprParser.AddSubContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code id}
 	 * labeled alternative in {@link LabeledExprParser#expr}.
@@ -74,7 +72,6 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitId(LabeledExprParser.IdContext ctx);
-
 	/**
 	 * Visit a parse tree produced by the {@code int}
 	 * labeled alternative in {@link LabeledExprParser#expr}.

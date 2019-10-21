@@ -38,8 +38,11 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 	@Override
 	public Integer visitId(LabeledExprParser.IdContext ctx) {
 		String id = ctx.ID().getText();
-		if(memory.containsKey(id)) return memory.get(id);
-		return 0;
+		if(memory.containsKey(id)){
+			return memory.get(id);
+		} else {
+			throw new RuntimeException(String.format("The variable %s can not be evaluated.", id));
+		}
 	}
 
 	// expr op=('*'|'/') expr
@@ -70,6 +73,14 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 	@Override
 	public Integer visitParens(LabeledExprParser.ParensContext ctx) {
 		return visit(ctx.expr()); // return child expr's value
+	}
+
+	// clear
+	@Override
+	public Integer visitClear(LabeledExprParser.ClearContext ctx) {
+		System.out.println("The current sate of the memory : " + memory.toString() + " and it has been cleared.");
+		memory.clear();
+		return 0;
 	}
 
 	public Map<String, Integer> getMemory() {
