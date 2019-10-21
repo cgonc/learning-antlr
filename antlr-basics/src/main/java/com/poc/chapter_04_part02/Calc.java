@@ -27,7 +27,7 @@ public class Calc {
 		ParseTree parseTree = labeledExprParser.prog();
 
 		EvalVisitor eval = new EvalVisitor();
-		Integer result = eval.visit(parseTree);
+		eval.visit(parseTree);
 		System.out.println("final memory = " + eval.getMemory());
 	}
 }
