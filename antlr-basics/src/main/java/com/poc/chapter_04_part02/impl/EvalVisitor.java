@@ -25,7 +25,7 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 	public Integer visitPrintExpr(LabeledExprParser.PrintExprContext ctx) {
 		Integer expressionValue = visit(ctx.expr());
 		System.out.println("Expression evaluated  = " + expressionValue);
-		return 0;
+		return expressionValue;
 	}
 
 	// INT
