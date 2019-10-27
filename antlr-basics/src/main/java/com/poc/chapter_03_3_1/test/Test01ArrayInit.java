@@ -23,5 +23,6 @@ public class Test01ArrayInit {
 
         ParseTree tree = parser.init();
         System.out.println("tree = " + tree.toStringTree(parser));
+
     }
 }
