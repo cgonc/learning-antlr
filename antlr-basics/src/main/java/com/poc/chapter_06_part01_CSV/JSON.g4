@@ -2,21 +2,21 @@ grammar JSON;
 
 json : object | array ;
 
-object : '{' pair (',' pair)* '}'
-       | '{' '}' // empty object
+object : LCP pair (COL pair)* RCP
+       | LCP RCP // empty object
        ;
-pair: STRING ':' value ;
+pair: STRING SC value ;
 
-array : '[' value (',' value)* ']'
-         | '[' ']' // empty array
+array : LSP value (COL value)* RSP
+         | LSP RSP // empty array
          ;
 value : STRING
       | NUMBER
       | object // recursion
       | array // recursion
-      | 'true' // keywords
-      | 'false'
-      | 'null' ;
+      | TRUE // keywords
+      | FALSE
+      | NULL ;
 
 STRING : '"' (ESC | ~["\\])* '"' ;
 fragment ESC : '\\' (["\\/bfnrt] | UNICODE) ;
@@ -31,3 +31,13 @@ fragment INT : '0' | [1-9] [0-9]* ; // no leading zeros
 fragment EXP : [Ee] [+\-]? INT ; // \- since - means "range" inside [...]
 
 WS : [ \t\n\r]+ -> skip ;
+
+LCP : '{' ;
+RCP : '}' ;
+LSP : '[' ;
+RSP : ']' ;
+SC : ':';
+COL : ',' ;
+TRUE : 'true';
+FALSE : 'false' ;
+NULL : 'null';
