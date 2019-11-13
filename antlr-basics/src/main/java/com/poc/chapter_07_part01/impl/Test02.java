@@ -15,7 +15,7 @@ import com.poc.chapter_03_3_4.test.TranslateLanguageApplication;
 import com.poc.chapter_07_part01.gen.PropertyFileLexer;
 import com.poc.chapter_07_part01.gen.PropertyFileParser;
 
-public class Test01 {
+public class Test02 {
 
 	public static void main(String[] args) throws URISyntaxException, IOException {
 		URL resource = TranslateLanguageApplication.class.getClassLoader().getResource("Test01.PropertyFile");
@@ -27,11 +27,9 @@ public class Test01 {
 		PropertyFileParser propertyFileParser = new PropertyFileParser(commonTokenStream);
 		ParseTree parseTree = propertyFileParser.file();
 
-		//Listener kodunu çağırma biçimin.
-		ParseTreeWalker parseTreeWalker = new ParseTreeWalker();
-		MyPropertyFileLoaderListener myPropertyFileLoaderListener = new MyPropertyFileLoaderListener();
-		parseTreeWalker.walk(myPropertyFileLoaderListener, parseTree);
-
-		System.out.println("loaded properties = " + myPropertyFileLoaderListener.getProperties());
+		//Visitor kodunu çağırma biçimin.
+		PropertyFileVisitor loader = new PropertyFileVisitor();
+		loader.visit(parseTree);
+		System.out.println(loader.getProps()); // print results
 	}
 }
