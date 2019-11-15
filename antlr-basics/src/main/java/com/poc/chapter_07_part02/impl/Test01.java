@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 public class Test01 {
 
     public static void main(String[] args) {
-        ExprLexer exprLexer = new ExprLexer(CharStreams.fromString("1+3*5+7"));
+        ExprLexer exprLexer = new ExprLexer(CharStreams.fromString("1+3*5*10+7*10"));
         CommonTokenStream commonTokenStream = new CommonTokenStream(exprLexer);
         ExprParser exprParser = new ExprParser(commonTokenStream);
         ParseTree parseTree = exprParser.s();
@@ -18,6 +18,6 @@ public class Test01 {
         ParseTreeWalker parseTreeWalker = new ParseTreeWalker();
         ExpressionEvaluaterListener expressionEvaluaterListener = new ExpressionEvaluaterListener();
         parseTreeWalker.walk(expressionEvaluaterListener, parseTree);
-        System.out.println("result = " + expressionEvaluaterListener.getValue());
+        System.out.println("result = " + expressionEvaluaterListener.getResult());
     }
 }
