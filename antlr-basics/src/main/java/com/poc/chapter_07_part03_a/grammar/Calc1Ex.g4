@@ -1,8 +1,8 @@
 grammar Calc1Ex;
 result : expression ;
-expression : expression operation=MULT expression       # Mult
+expression : INT                                        # Int
            | expression operation=ADD expression        # Add
-           | INT                                        # Int
+           | expression operation=MULT expression       # Mult
            ;
 
 MULT: '*' ;

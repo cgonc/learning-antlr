@@ -247,26 +247,26 @@ public class Calc1ExParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 					case 1:
 						{
-						_localctx = new MultContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new AddContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(9);
-						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
 						setState(10);
-						((MultContext)_localctx).operation = match(MULT);
+						((AddContext)_localctx).operation = match(ADD);
 						setState(11);
-						expression(4);
+						expression(3);
 						}
 						break;
 					case 2:
 						{
-						_localctx = new AddContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new MultContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(12);
-						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
 						setState(13);
-						((AddContext)_localctx).operation = match(ADD);
+						((MultContext)_localctx).operation = match(MULT);
 						setState(14);
-						expression(3);
+						expression(2);
 						}
 						break;
 					}
@@ -299,9 +299,9 @@ public class Calc1ExParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 3);
-		case 1:
 			return precpred(_ctx, 2);
+		case 1:
+			return precpred(_ctx, 1);
 		}
 		return true;
 	}
@@ -310,8 +310,8 @@ public class Calc1ExParser extends Parser {
 		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\6\27\4\2\t\2\4\3"+
 		"\t\3\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3\22\n\3\f\3\16\3\25"+
 		"\13\3\3\3\2\3\4\4\2\4\2\2\2\26\2\6\3\2\2\2\4\b\3\2\2\2\6\7\5\4\3\2\7\3"+
-		"\3\2\2\2\b\t\b\3\1\2\t\n\7\5\2\2\n\23\3\2\2\2\13\f\f\5\2\2\f\r\7\3\2\2"+
-		"\r\22\5\4\3\6\16\17\f\4\2\2\17\20\7\4\2\2\20\22\5\4\3\5\21\13\3\2\2\2"+
+		"\3\2\2\2\b\t\b\3\1\2\t\n\7\5\2\2\n\23\3\2\2\2\13\f\f\4\2\2\f\r\7\4\2\2"+
+		"\r\22\5\4\3\5\16\17\f\3\2\2\17\20\7\3\2\2\20\22\5\4\3\4\21\13\3\2\2\2"+
 		"\21\16\3\2\2\2\22\25\3\2\2\2\23\21\3\2\2\2\23\24\3\2\2\2\24\5\3\2\2\2"+
 		"\25\23\3\2\2\2\4\21\23";
 	public static final ATN _ATN =

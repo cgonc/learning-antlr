@@ -3,6 +3,7 @@ package com.poc.chapter_07_part03_a.impl;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import com.poc.chapter_07_part03_a.grammar.Calc1ExLexer;
 import com.poc.chapter_07_part03_a.grammar.Calc1ExParser;
@@ -17,6 +18,11 @@ public class Calc1ImplTest {
 
 		Calc1ImplVisitor calc1ImplVisitor = new Calc1ImplVisitor();
 		Integer result = calc1ImplVisitor.visit(fromTopParseTree);
-		System.out.println("result  " + result);
+		System.out.println("result from visitor  " + result);
+
+		ParseTreeWalker parseTreeWalker = new ParseTreeWalker();
+		Calc1ImplListener calc1ImplListener = new Calc1ImplListener();
+		parseTreeWalker.walk(calc1ImplListener, fromTopParseTree);
+		System.out.println("result from listener " + calc1ImplListener.getResult());
 	}
 }
