@@ -15,6 +15,8 @@ public class Calc1ImplTest {
 		CommonTokenStream commonTokenStream = new CommonTokenStream(calc1ExLexer);
 		Calc1ExParser calc1ExParser = new Calc1ExParser(commonTokenStream);
 		ParseTree fromTopParseTree = calc1ExParser.result();
+		String parseTreeStr = fromTopParseTree.toStringTree(calc1ExParser);
+		System.out.println(parseTreeStr);
 
 		Calc1ImplVisitor calc1ImplVisitor = new Calc1ImplVisitor();
 		Integer result = calc1ImplVisitor.visit(fromTopParseTree);
@@ -24,5 +26,10 @@ public class Calc1ImplTest {
 		Calc1ImplListener calc1ImplListener = new Calc1ImplListener();
 		parseTreeWalker.walk(calc1ImplListener, fromTopParseTree);
 		System.out.println("result from listener " + calc1ImplListener.getResult());
+
+		Calc1ImplParseTreeProperty calc1ImplParseTreeProperty = new Calc1ImplParseTreeProperty();
+		parseTreeWalker.walk(calc1ImplParseTreeProperty, fromTopParseTree);
+		Integer resultFromPropertyListener = calc1ImplParseTreeProperty.getValue(fromTopParseTree);
+		System.out.println("result from property listener " + resultFromPropertyListener);
 	}
 }
