@@ -1,8 +1,8 @@
-package com.poc.chapter_08_part01_csv_loader;
+package com.poc.chapter_08_part01;
 
 import com.poc.chapter_03_3_4.test.TranslateLanguageApplication;
-import com.poc.chapter_08_part01_csv_loader.gen.CSVLoaderMapLexer;
-import com.poc.chapter_08_part01_csv_loader.gen.CSVLoaderMapParser;
+import com.poc.chapter_08_part01.gen.CSVLoaderMapLexer;
+import com.poc.chapter_08_part01.gen.CSVLoaderMapParser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;

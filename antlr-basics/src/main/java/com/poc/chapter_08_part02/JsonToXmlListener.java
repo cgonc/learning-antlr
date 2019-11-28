@@ -1,4 +1,4 @@
-package com.poc.chapter_08_part01;
+package com.poc.chapter_08_part02;
 
 import java.io.StringReader;
 
@@ -12,8 +12,8 @@ import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.InputSource;
 
-import com.poc.chapter_08_part01.gen.JSONForXmlConversionBaseListener;
-import com.poc.chapter_08_part01.gen.JSONForXmlConversionParser;
+import com.poc.chapter_08_part02.gen.JSONForXmlConversionBaseListener;
+import com.poc.chapter_08_part02.gen.JSONForXmlConversionParser;
 
 public class JsonToXmlListener extends JSONForXmlConversionBaseListener {
 

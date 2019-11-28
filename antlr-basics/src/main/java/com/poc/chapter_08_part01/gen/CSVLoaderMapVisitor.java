@@ -1,5 +1,5 @@
 // Generated from C:/sideprojects/antlr-poc/antlr-basics/src/main/java/com/poc/chapter_08_part01_csv_loader\CSVLoaderMap.g4 by ANTLR 4.7.2
-package com.poc.chapter_08_part01_csv_loader.gen;
+package com.poc.chapter_08_part01.gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

@@ -1,4 +1,4 @@
-package com.poc.chapter_08_part01;
+package com.poc.chapter_08_part02;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,8 +12,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import com.google.googlejavaformat.java.FormatterException;
-import com.poc.chapter_08_part01.gen.JSONForXmlConversionLexer;
-import com.poc.chapter_08_part01.gen.JSONForXmlConversionParser;
+import com.poc.chapter_08_part02.gen.JSONForXmlConversionLexer;
+import com.poc.chapter_08_part02.gen.JSONForXmlConversionParser;
 
 public class JsonToXmlImpl {
 

@@ -1,7 +1,7 @@
-package com.poc.chapter_08_part01_csv_loader;
+package com.poc.chapter_08_part01;
 
-import com.poc.chapter_08_part01_csv_loader.gen.CSVLoaderMapBaseListener;
-import com.poc.chapter_08_part01_csv_loader.gen.CSVLoaderMapParser;
+import com.poc.chapter_08_part01.gen.CSVLoaderMapBaseListener;
+import com.poc.chapter_08_part01.gen.CSVLoaderMapParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;

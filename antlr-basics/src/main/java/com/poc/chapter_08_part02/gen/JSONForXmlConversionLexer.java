@@ -1,13 +1,10 @@
 // Generated from D:/my_github/antlr-poc/antlr-basics/src/main/java/com/poc/chapter_08_part01/gen\JSONForXmlConversion.g4 by ANTLR 4.7.2
-package com.poc.chapter_08_part01.gen;
+package com.poc.chapter_08_part02.gen;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class JSONForXmlConversionLexer extends Lexer {
