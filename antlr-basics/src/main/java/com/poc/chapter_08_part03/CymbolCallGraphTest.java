@@ -29,7 +29,7 @@ public class CymbolCallGraphTest {
         ParseTreeWalker parseTreeWalker = new ParseTreeWalker();
         FunctionListener functionListener = new FunctionListener();
         parseTreeWalker.walk(functionListener, parseTree);
-        String resultingDotFile = functionListener.getGraph().toString();
+        String resultingDotFile = functionListener.getGraph().toDOT();
 
         System.out.println("resultingDotFile = " + resultingDotFile);
         String resultingDotFileFromStringTemplate = functionListener.getGraph().toST().render();
