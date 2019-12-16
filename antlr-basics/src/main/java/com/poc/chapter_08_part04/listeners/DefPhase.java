@@ -2,11 +2,9 @@ package com.poc.chapter_08_part04.listeners;
 
 import com.poc.chapter_08_part03.gen.CymbolCallGraphBaseListener;
 import com.poc.chapter_08_part03.gen.CymbolCallGraphParser;
-import com.poc.chapter_08_part04.scope.FunctionSymbol;
-import com.poc.chapter_08_part04.scope.GlobalScope;
-import com.poc.chapter_08_part04.scope.Scope;
-import com.poc.chapter_08_part04.scope.Symbol;
+import com.poc.chapter_08_part04.scope.*;
 import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
 public class DefPhase extends CymbolCallGraphBaseListener {
@@ -29,6 +27,13 @@ public class DefPhase extends CymbolCallGraphBaseListener {
 
     private void saveScope(ParserRuleContext ctx, Scope s) {
         scopes.put(ctx, s);
+    }
+
+    private void defineVar(CymbolCallGraphParser.TypeContext typeContext, Token nameToken) {
+        int typeTokenType = typeContext.start.getType();
+        Symbol.Type type = getType(typeTokenType);
+        VariableSymbol variableSymbol = new VariableSymbol(nameToken.getText(), type);
+        currentScope.define(variableSymbol);
     }
 
     @Override
@@ -56,5 +61,35 @@ public class DefPhase extends CymbolCallGraphBaseListener {
         currentScope.define(functionSymbol); // Define function in current scope
         saveScope(ctx, functionSymbol); // Push: set function's parent to current
         currentScope = functionSymbol;       // Current scope is now function scope
+    }
+
+    @Override
+    public void exitFunctionDecl(CymbolCallGraphParser.FunctionDeclContext ctx) {
+        System.out.println(currentScope);
+        //pop the scope.
+        currentScope = currentScope.getEnclosingScope();
+    }
+
+    @Override
+    public void enterBlock(CymbolCallGraphParser.BlockContext ctx) {
+        // push new local scope
+        currentScope = new LocalScope(currentScope);
+        saveScope(ctx, currentScope);
+    }
+
+    @Override
+    public void exitBlock(CymbolCallGraphParser.BlockContext ctx) {
+        System.out.println(currentScope);
+        currentScope = currentScope.getEnclosingScope(); // pop scope
+    }
+
+    @Override
+    public void exitFormalParameter(CymbolCallGraphParser.FormalParameterContext ctx) {
+        defineVar(ctx.type(), ctx.ID().getSymbol());
+    }
+
+    @Override
+    public void exitVarDecl(CymbolCallGraphParser.VarDeclContext ctx) {
+        defineVar(ctx.type(), ctx.ID().getSymbol());
     }
 }
