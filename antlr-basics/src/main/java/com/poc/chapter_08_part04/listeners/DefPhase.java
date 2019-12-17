@@ -92,4 +92,16 @@ public class DefPhase extends CymbolCallGraphBaseListener {
     public void exitVarDecl(CymbolCallGraphParser.VarDeclContext ctx) {
         defineVar(ctx.type(), ctx.ID().getSymbol());
     }
+
+    public ParseTreeProperty<Scope> getScopes() {
+        return scopes;
+    }
+
+    public GlobalScope getGlobals() {
+        return globals;
+    }
+
+    public Scope getCurrentScope() {
+        return currentScope;
+    }
 }
